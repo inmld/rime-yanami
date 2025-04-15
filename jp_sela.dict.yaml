@@ -1,0 +1,7 @@
+---
+name: jp_sela
+version: 'v0.2-20180712'
+sort: by_weight
+import_tables:
+  - jp_dicts/jp_sela     # 字表
+...
