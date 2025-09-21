@@ -67,8 +67,8 @@ engine:
     - lua_translator@*date_translator           # 时间、日期、星期
     - lua_translator@*lunar                     # 农历
     - table_translator@custom_phrase            # 自定义短语 custom_phrase.txt
-    # - table_translator@jp_sela                  # 添加注释后：停用日语输入
-    - table_translator@melt_eng                 # 英文输入
+    # - table_translator@jp_sela                  # 添加注释后停用日语输入
+    # - table_translator@melt_eng                 # 英文输入 添加注释后停用
     - table_translator@cn_en                    # 中英混合词汇
     - table_translator@radical_lookup           # 部件拆字反查
     - lua_translator@*unicode                   # Unicode
@@ -211,8 +211,8 @@ recognizer:
   import_preset: default
   patterns:
     punct: "^[/]([0-9]|10|[A-Za-z]*)$"    # 响应symbols_v.yaml ‘/’
-    radical_lookup: "^`h[A-Za-z0-9]*"        # 部件拆字
-    jp_sela: "^`j[A-Za-z-]*"
+    radical_lookup: "^`h[A-Za-z]*"        # 部件拆字
+    # jp_sela: "^`j[A-Za-z-]*"
     # melt_eng: "^`e[A-Za-z]*"
     unicode: "^`u[a-f0-9]+"              # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@unicode，输出 Unicode 字符
     number: "^`r[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@number_translator，数字金额大写
